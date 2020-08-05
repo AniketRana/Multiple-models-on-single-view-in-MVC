@@ -1,0 +1,8 @@
+﻿@model  IEnumerable<MultipleModel_InSingleView.Models.Employee>
+
+<h2>Employee Data</h2>
+
+@foreach (var item in Model)
+{
+    <h2>@(item.Name + " & " + item.Email)</h2>
+}

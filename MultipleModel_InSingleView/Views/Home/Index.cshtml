@@ -1,0 +1,109 @@
+﻿@using MultipleModel_InSingleView.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+@*@model IndexVM
+
+    <h2>For method 1 View model</h2>
+
+
+    @foreach (var emp in Model.Employees)
+    {
+        <h2>@emp.Name</h2>
+    }
+
+
+        </hr>
+
+    @foreach (var stu in Model.Students)
+    {
+        <h2>@stu.Email</h2>
+    }*@
+
+<hr>
+
+@*@model dynamic
+    <h2>For method 2 Dynamic model</h2>
+
+
+    @foreach (var emp in Model.Employees)
+    {
+        <h2>@emp.Name</h2>
+    }
+
+
+        </hr>
+
+    @foreach (var stu in Model.Students)
+    {
+        <h2>@stu.Email</h2>
+    }*@
+
+
+<hr>
+
+@*@model Tuple < List<Employee>, List<Student>,string>
+    <h2>For method 3 Tuple</h2>
+
+    <h1>@Model.Item3</h1>
+
+    @foreach (var emp in Model.Item1)
+    {
+        <h2>@emp.Name</h2>
+    }
+
+
+            </hr>
+
+    @foreach (var stu in Model.Item2)
+    {
+        <h2>@stu.Email</h2>
+    }*@
+
+<hr>
+
+
+@*<h2>For method 4 Viewbag</h2>
+
+    @foreach (var emp in ViewBag.Employees)
+    {
+        <h2>@emp.Name</h2>
+    }
+
+
+                </hr>
+
+    @foreach (var stu in ViewBag.Students)
+    {
+        <h2>@stu.Email</h2>
+    }*@
+
+
+
+
+@*<h2>For method 5 Viewdata</h2>
+
+    @foreach (var emp in  ViewData["Employees"] as List<Employee>)
+    {
+        <h2>@emp.Name</h2>
+    }
+
+
+                </hr>
+
+    @foreach (var stu in ViewData["Students"] as List<Student>)
+    {
+        <h2>@stu.Email</h2>
+    }*@
+
+
+
+
+<h2>For method 6 using partial view </h2>
+
+
+@{Html.RenderAction("Employees");}
+
+<hr>
+@{Html.RenderAction("Students");}
